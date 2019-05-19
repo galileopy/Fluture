@@ -14,7 +14,7 @@
   "repository": "https://github.com/fluture-js/Fluture.git",
   "scripts": {
     "bench": "npm run build && sanctuary-benchmark",
-    "build": "rollup -c rollup.config.js",
+    "build": "(cd rollup; ../node_modules/.bin/rollup -f iife -i test.mjs -o shaken.mjs && ../node_modules/.bin/rollup --no-treeshake -f iife -i test.mjs -o unshaken.mjs && echo $((`cat unshaken.mjs | wc -c` - `cat shaken.mjs | wc -c`)))",
     "build:dist": "rollup -c rollup.config.dist.js",
     "clean": "rimraf npm-debug.log coverage index.js .esm-cache .nyc_output node_modules/.cache",
     "lint": "eslint --ext mjs src test index.mjs index.cjs.mjs",
@@ -78,7 +78,7 @@
     "remark-cli": "^6.0.0",
     "remark-validate-links": "^8.0.0",
     "rimraf": "^2.6.2",
-    "rollup": "^1.0.0",
+    "rollup": "^1.12.3",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-resolve": "^5.0.0",
     "sanctuary-benchmark": "^1.0.0",

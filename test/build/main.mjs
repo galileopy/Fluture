@@ -1,8 +1,8 @@
 import {noop, eq} from '../util/util';
-import * as Fluture from '../../index.mjs';
+import * as Fluture from '../../src/index.mjs';
 import Future from '../../index.js';
 
-describe('CommonJS build output', function (){
+describe('The CommonJS module', function (){
 
   it('exports the Future constructor by default', function (){
     eq(typeof Future, 'function');
@@ -15,7 +15,7 @@ describe('CommonJS build output', function (){
   });
 
   Object.keys(Fluture).forEach(key => {
-    it('has a ' + key + ' property of type ' + typeof Fluture[key], function (){
+    it('has a "' + key + '" property of type ' + typeof Fluture[key], function (){
       eq(typeof Future[key], typeof Fluture[key]);
     });
   });

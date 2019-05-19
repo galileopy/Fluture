@@ -1,0 +1,23 @@
+export const foo = `
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+  foo
+`;

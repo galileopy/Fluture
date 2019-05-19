@@ -1,0 +1,23 @@
+export const bar = `
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+  bar
+`;
