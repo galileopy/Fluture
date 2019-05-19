@@ -1,8 +1,5 @@
-import {application1, application, future} from './internal/check';
-import {createTransformation} from './internal/transformation';
 import {AndTransformation} from './and';
-import {Reject} from './reject';
-import {Resolve} from './resolve';
+import {createTransformation, Resolve, Reject, application1, application, future} from './future';
 
 export var LastlyTransformation = createTransformation(1, 'lastly', {
   rejected: function LastlyAction$rejected(x){

@@ -1,15 +1,9 @@
-import {application1, application, func, functor} from './internal/check';
 import {FL} from './internal/const';
-import {createTransformation} from './internal/transformation';
-import {call} from './internal/utils';
-import {isFuture} from './future';
-import {Resolve} from './resolve';
+import {invalidArgumentOf} from './internal/error';
+import {isFunctor} from './internal/predicates';
+import {isFuture, MapTransformation, application1, application, func} from './future';
 
-export var MapTransformation = createTransformation(1, 'map', {
-  resolved: function MapTransformation$resolved(x){
-    return new Resolve(this.context, call(this.$1, x));
-  }
-});
+export var functor = {pred: isFunctor, error: invalidArgumentOf('have Functor implemented')};
 
 export function map(f){
   var context1 = application1(map, func, arguments);

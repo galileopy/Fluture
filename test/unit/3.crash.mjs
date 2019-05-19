@@ -1,4 +1,4 @@
-import {crash} from '../../src/crash';
+import {crash} from '../../src/future';
 import {eq, assertIsFuture, assertCrashed} from '../util/util';
 import {testFunction, anyArg} from '../util/props';
 

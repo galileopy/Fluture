@@ -1,4 +1,4 @@
-import {application1, future} from './internal/check';
+import {application1, future} from './future';
 
 export function promise(m){
   application1(promise, future, arguments);

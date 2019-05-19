@@ -1,21 +1,9 @@
-import {application1, application, future, apply as applyArg} from './internal/check';
 import {FL} from './internal/const';
-import {typeError} from './internal/error';
-import {isFunction} from './internal/predicates';
-import {createTransformation} from './internal/transformation';
-import {show} from './internal/utils';
-import {isFuture} from './future';
-import {MapTransformation} from './map';
+import {invalidArgumentOf} from './internal/error';
+import {isApply} from './internal/predicates';
+import {isFuture, ApTransformation, application1, application, future} from './future';
 
-export var ApTransformation = createTransformation(1, 'ap', {
-  resolved: function ApTransformation$resolved(f){
-    if(isFunction(f)) return this.$1._transform(new MapTransformation(this.context, f));
-    throw typeError(
-      'ap expects the second Future to resolve to a Function\n' +
-      '  Actual: ' + show(f)
-    );
-  }
-});
+export var apply = {pred: isApply, error: invalidArgumentOf('have Apply implemented')};
 
 export function ap(mx){
   if(isFuture(mx)){
@@ -26,9 +14,9 @@ export function ap(mx){
     };
   }
 
-  var context = application1(ap, applyArg, arguments);
+  var context = application1(ap, apply, arguments);
   return function ap(mf){
-    application(2, ap, applyArg, arguments, context);
+    application(2, ap, apply, arguments, context);
     return mx[FL.ap](mf);
   };
 }

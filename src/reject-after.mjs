@@ -1,5 +1,4 @@
-import {application1, application, any, positiveInteger} from './internal/check';
-import {createInterpreter, never} from './future';
+import {createInterpreter, never, application1, application, any, positiveInteger} from './future';
 
 export var RejectAfter =
 createInterpreter(2, 'rejectAfter', function RejectAfter$interpret(rec, rej){

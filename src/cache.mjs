@@ -1,6 +1,5 @@
-import {application1, future} from './internal/check';
 import {noop} from './internal/utils';
-import {createInterpreter} from './future';
+import {createInterpreter, application1, future} from './future';
 
 export var Cold = 0;
 export var Pending = 1;

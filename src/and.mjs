@@ -1,5 +1,4 @@
-import {application1, application, future} from './internal/check';
-import {createTransformation} from './internal/transformation';
+import {createTransformation, application1, application, future} from './future';
 
 export var AndTransformation = createTransformation(1, 'and', {
   resolved: function AndTransformation$resolved(){ return this.$1 }

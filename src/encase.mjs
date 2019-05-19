@@ -1,6 +1,5 @@
-import {application1, application, func, any} from './internal/check';
 import {noop} from './internal/utils';
-import {createInterpreter} from './future';
+import {createInterpreter, application1, application, func, any} from './future';
 
 export var Encase = createInterpreter(2, 'encase', function Encase$interpret(rec, rej, res){
   var fn = this.$1, r;

@@ -1,7 +1,5 @@
-import {application1, application, future, func} from './internal/check';
-import {createTransformation} from './internal/transformation';
 import {call} from './internal/utils';
-import {Reject} from './reject';
+import {createTransformation, Reject, application1, application, future, func} from './future';
 
 export var MapRejTransformation = createTransformation(1, 'mapRej', {
   rejected: function MapRejTransformation$rejected(x){

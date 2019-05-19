@@ -1,11 +1,15 @@
-import {application1, application, future, alternative} from './internal/check';
 import {FL} from './internal/const';
-import {createTransformation} from './internal/transformation';
-import {isFuture} from './future';
+import {invalidArgumentOf} from './internal/error';
+import {isAlt} from './internal/predicates';
+import {
+  AltTransformation,
+  application,
+  application1,
+  future,
+  isFuture
+} from './future';
 
-export var AltTransformation = createTransformation(1, 'alt', {
-  rejected: function AltTransformation$rejected(){ return this.$1 }
-});
+export var alternative = {pred: isAlt, error: invalidArgumentOf('have Alt implemented')};
 
 export function alt(left){
   if(isFuture(left)){

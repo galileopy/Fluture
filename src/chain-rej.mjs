@@ -1,6 +1,5 @@
-import {application1, application, future, func} from './internal/check';
-import {createTransformation} from './internal/transformation';
 import {call} from './internal/utils';
+import {createTransformation, application1, application, future, func} from './future';
 
 export var ChainRejTransformation = createTransformation(1, 'chainRej', {
   rejected: function ChainRejTransformation$rejected(x){ return call(this.$1, x) }

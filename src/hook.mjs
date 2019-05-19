@@ -1,7 +1,6 @@
-import {application1, application, func, future} from './internal/check';
 import {noop, show, raise} from './internal/utils';
 import {invalidFuture, wrapException} from './internal/error';
-import {createInterpreter, isFuture} from './future';
+import {createInterpreter, isFuture, application1, application, func, future} from './future';
 
 function invalidDisposal(m, f, x){
   return invalidFuture(

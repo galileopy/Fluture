@@ -1,7 +1,5 @@
-import {application1, application, func, future} from './internal/check';
-import {createTransformation} from './internal/transformation';
 import {call} from './internal/utils';
-import {Resolve} from './resolve';
+import {createTransformation, Resolve, application1, application, func, future} from './future';
 
 export var FoldTransformation = createTransformation(2, 'fold', {
   rejected: function FoldTransformation$rejected(x){

@@ -23,6 +23,12 @@ export function invalidArgument(it, at, expected, actual){
   );
 }
 
+export function invalidArgumentOf(expected){
+  return function(it, at, actual){
+    return invalidArgument(it, at, expected, actual);
+  };
+}
+
 export function invalidContext(it, actual){
   return typeError(
     it + '() was invoked outside the context of a Future. You might want to use'

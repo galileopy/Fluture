@@ -1,4 +1,4 @@
-import {application, application1, func, future} from './internal/check';
+import {application, application1, func, future} from './future';
 
 export function forkCatch(f){
   var context1 = application1(forkCatch, func, arguments);

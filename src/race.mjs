@@ -1,10 +1,10 @@
-import {application1, application, future} from './internal/check';
 import {
   createParallelTransformation,
   earlyCrash,
   earlyReject,
   earlyResolve
-} from './internal/parallel-transformation';
+} from './internal/parallel';
+import {application1, application, future} from './future';
 
 export var RaceTransformation =
 createParallelTransformation('race', earlyCrash, earlyReject, earlyResolve, {});

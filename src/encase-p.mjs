@@ -1,8 +1,7 @@
-import {application1, application, func, any} from './internal/check';
 import {wrapException, typeError} from './internal/error';
 import {isThenable} from './internal/predicates';
 import {noop, show} from './internal/utils';
-import {createInterpreter} from './future';
+import {createInterpreter, application1, application, func, any} from './future';
 
 function invalidPromise(p, f, a){
   return typeError(

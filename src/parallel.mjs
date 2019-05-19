@@ -1,8 +1,13 @@
-import {application1, positiveInteger, application, futureArray} from './internal/check';
 import {wrapException} from './internal/error';
 import {noop} from './internal/utils';
-import {createInterpreter} from './future';
-import {resolve} from './resolve';
+import {
+  createInterpreter,
+  resolve,
+  application1,
+  positiveInteger,
+  application,
+  futureArray
+} from './future';
 
 export var Parallel = createInterpreter(2, 'parallel', function Parallel$interpret(rec, rej, res){
 

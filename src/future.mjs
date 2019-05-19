@@ -1,12 +1,55 @@
 /*eslint no-cond-assign:0, no-constant-condition:0 */
-
-import {show, noop} from './internal/utils';
-import {isFunction} from './internal/predicates';
-import {$$type} from './internal/const';
-import {nil, cons, isNil, reverse} from './internal/list';
 import type from 'sanctuary-type-identifiers';
-import {typeError, wrapException, invalidArgument, invalidArity} from './internal/error';
-import {captureContext} from './internal/debug';
+
+import {FL, $$type} from './internal/const';
+import {captureContext, captureApplicationContext, captureStackTrace} from './internal/debug';
+import {
+  invalidArgument,
+  invalidArgumentOf,
+  invalidArity,
+  invalidFuture,
+  invalidFutureArgument,
+  typeError,
+  withExtraContext,
+  wrapException
+} from './internal/error';
+import {Next, Done} from './internal/iteration';
+import {nil, cons, isNil, reverse} from './internal/list';
+import {isArray, isFunction, isUnsigned} from './internal/predicates';
+import {show, noop, call, moop} from './internal/utils';
+
+function alwaysTrue(){
+  return true;
+}
+
+function isFutureArray(xs){
+  if(!isArray(xs)) return false;
+  for(var i = 0; i < xs.length; i++){
+    if(!isFuture(xs[i])) return false;
+  }
+  return true;
+}
+
+export var any = {pred: alwaysTrue, error: invalidArgumentOf('be anything')};
+export var func = {pred: isFunction, error: invalidArgumentOf('be a Function')};
+export var future = {pred: isFuture, error: invalidFutureArgument};
+export var positiveInteger = {pred: isUnsigned, error: invalidArgumentOf('be a positive Integer')};
+
+export var futureArray = {
+  pred: isFutureArray,
+  error: invalidArgumentOf('be an Array of valid Futures')
+};
+
+export function application(n, f, type, args, prev){
+  if(args.length < 2 && type.pred(args[0])) return captureApplicationContext(prev, n, f);
+  var e = args.length > 1 ? invalidArity(f, args) : type.error(f.name, n - 1, args[0]);
+  captureStackTrace(e, f);
+  throw withExtraContext(e, prev);
+}
+
+export function application1(f, type, args){
+  return application(1, f, type, args, nil);
+}
 
 export function Future(computation){
   if(arguments.length > 1) throw invalidArity(Future, arguments);
@@ -19,6 +62,8 @@ export function isFuture(x){
 }
 
 Future['@@type'] = $$type;
+Future[FL.of] = resolve;
+Future[FL.chainRec] = chainRec;
 
 Future.prototype['@@show'] = function Future$show(){
   return this.toString();
@@ -27,6 +72,31 @@ Future.prototype['@@show'] = function Future$show(){
 Future.prototype.pipe = function Future$pipe(f){
   if(!isFunction(f)) throw invalidArgument('Future#pipe', 0, 'be a Function', f);
   return f(this);
+};
+
+Future.prototype[FL.ap] = function Future$FL$ap(other){
+  var context = captureContext(nil, 'a Fantasy Land dispatch to ap', Future$FL$ap);
+  return other._transform(new ApTransformation(context, this));
+};
+
+Future.prototype[FL.map] = function Future$FL$map(mapper){
+  var context = captureContext(nil, 'a Fantasy Land dispatch to map', Future$FL$map);
+  return this._transform(new MapTransformation(context, mapper));
+};
+
+Future.prototype[FL.bimap] = function Future$FL$bimap(lmapper, rmapper){
+  var context = captureContext(nil, 'a Fantasy Land dispatch to bimap', Future$FL$bimap);
+  return this._transform(new BimapTransformation(context, lmapper, rmapper));
+};
+
+Future.prototype[FL.chain] = function Future$FL$chain(mapper){
+  var context = captureContext(nil, 'a Fantasy Land dispatch to chain', Future$FL$chain);
+  return this._transform(new ChainTransformation(context, mapper));
+};
+
+Future.prototype[FL.alt] = function Future$FL$alt(other){
+  var context = captureContext(nil, 'a Fantasy Land dispatch to alt', Future$FL$alt);
+  return this._transform(new AltTransformation(context, other));
 };
 
 Future.prototype.extractLeft = function Future$extractLeft(){
@@ -110,6 +180,63 @@ createInterpreter(1, 'Future', function Computation$interpret(rec, rej, res){
     }
   };
 });
+
+export var Never = createInterpreter(0, 'never', function Never$interpret(){
+  return noop;
+});
+
+Never.prototype._isNever = true;
+
+export var never = new Never(nil);
+
+export function isNever(x){
+  return isFuture(x) && x._isNever === true;
+}
+
+export var Crash = createInterpreter(1, 'crash', function Crash$interpret(rec){
+  rec(this.$1);
+  return noop;
+});
+
+export function crash(x){
+  return new Crash(application1(crash, any, arguments), x);
+}
+
+export var Reject = createInterpreter(1, 'reject', function Reject$interpret(rec, rej){
+  rej(this.$1);
+  return noop;
+});
+
+Reject.prototype.extractLeft = function Reject$extractLeft(){
+  return [this.$1];
+};
+
+export function reject(x){
+  return new Reject(application1(reject, any, arguments), x);
+}
+
+export var Resolve = createInterpreter(1, 'resolve', function Resolve$interpret(rec, rej, res){
+  res(this.$1);
+  return noop;
+});
+
+Resolve.prototype.extractRight = function Resolve$extractRight(){
+  return [this.$1];
+};
+
+export function resolve(x){
+  return new Resolve(application1(resolve, any, arguments), x);
+}
+
+//Note: This function is not curried because it's only used to satisfy the
+//      Fantasy Land ChainRec specification.
+export function chainRec(step, init){
+  return resolve(Next(init))._transform(new ChainTransformation(nil, function chainRec$recur(o){
+    return o.done ?
+           resolve(o.value) :
+           step(Next, Done, o.value)._transform(new ChainTransformation(nil, chainRec$recur));
+  }));
+}
 
 export var Transformer = createInterpreter(2, '', function Transformer$interpret(rec, rej, res){
 
@@ -270,14 +397,99 @@ Transformer.prototype.toString = function Transformer$toString(){
   return str;
 };
 
-export var Never = createInterpreter(0, 'never', function Never$interpret(){
-  return noop;
+function BaseTransformation$rejected(x){
+  this.cancel();
+  return new Reject(this.context, x);
+}
+
+function BaseTransformation$resolved(x){
+  this.cancel();
+  return new Resolve(this.context, x);
+}
+
+export var BaseTransformation = {
+  rejected: BaseTransformation$rejected,
+  resolved: BaseTransformation$resolved,
+  run: moop,
+  cancel: noop,
+  context: nil,
+  arity: 0,
+  name: 'transform'
+};
+
+function wrapHandler(handler){
+  return function transformationHandler(x){
+    var m;
+    try{
+      m = handler.call(this, x);
+    }catch(e){
+      return new Crash(this.context, e);
+    }
+    if(isFuture(m)){
+      return m;
+    }
+    return new Crash(this.context, invalidFuture(
+      this.name + ' expects the return value from the function it\'s given', m,
+      '\n  When called with: ' + show(x)
+    ));
+  };
+}
+
+export function createTransformation(arity, name, prototype){
+  var Transformation = function(context, $1, $2){
+    this.context = context;
+    this.$1 = $1;
+    this.$2 = $2;
+  };
+
+  Transformation.prototype = Object.create(BaseTransformation);
+  Transformation.prototype.arity = arity;
+  Transformation.prototype.name = name;
+
+  if(typeof prototype.rejected === 'function'){
+    Transformation.prototype.rejected = wrapHandler(prototype.rejected);
+  }
+
+  if(typeof prototype.resolved === 'function'){
+    Transformation.prototype.resolved = wrapHandler(prototype.resolved);
+  }
+
+  if(typeof prototype.run === 'function'){
+    Transformation.prototype.run = prototype.run;
+  }
+
+  return Transformation;
+}
+
+export var ApTransformation = createTransformation(1, 'ap', {
+  resolved: function ApTransformation$resolved(f){
+    if(isFunction(f)) return this.$1._transform(new MapTransformation(this.context, f));
+    throw typeError(
+      'ap expects the second Future to resolve to a Function\n' +
+      '  Actual: ' + show(f)
+    );
+  }
 });
 
-Never.prototype._isNever = true;
+export var AltTransformation = createTransformation(1, 'alt', {
+  rejected: function AltTransformation$rejected(){ return this.$1 }
+});
 
-export var never = new Never(nil);
+export var MapTransformation = createTransformation(1, 'map', {
+  resolved: function MapTransformation$resolved(x){
+    return new Resolve(this.context, call(this.$1, x));
+  }
+});
 
-export function isNever(x){
-  return isFuture(x) && x._isNever === true;
-}
+export var BimapTransformation = createTransformation(2, 'bimap', {
+  rejected: function BimapTransformation$rejected(x){
+    return new Reject(this.context, call(this.$1, x));
+  },
+  resolved: function BimapTransformation$resolved(x){
+    return new Resolve(this.context, call(this.$2, x));
+  }
+});
+
+export var ChainTransformation = createTransformation(1, 'chain', {
+  resolved: function ChainTransformation$resolved(x){ return call(this.$1, x) }
+});

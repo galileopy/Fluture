@@ -1,12 +1,6 @@
-import {application1, application, future} from './internal/check';
-import {
-  createParallelTransformation,
-  earlyCrash,
-  earlyReject
-} from './internal/parallel-transformation';
-import {createTransformation} from './internal/transformation';
+import {createParallelTransformation, earlyCrash, earlyReject} from './internal/parallel';
 import {noop} from './internal/utils';
-import {Resolve} from './resolve';
+import {createTransformation, Resolve, application1, application, future} from './future';
 
 export var PairTransformation = createTransformation(1, 'pair', {
   resolved: function PairTransformation$resolved(x){

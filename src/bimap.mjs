@@ -1,19 +1,9 @@
-import {application1, application, func, bifunctor} from './internal/check';
 import {FL} from './internal/const';
-import {createTransformation} from './internal/transformation';
-import {call} from './internal/utils';
-import {isFuture} from './future';
-import {Reject} from './reject';
-import {Resolve} from './resolve';
+import {invalidArgumentOf} from './internal/error';
+import {isBifunctor} from './internal/predicates';
+import {isFuture, BimapTransformation, application1, application, func} from './future';
 
-export var BimapTransformation = createTransformation(2, 'bimap', {
-  rejected: function BimapTransformation$rejected(x){
-    return new Reject(this.context, call(this.$1, x));
-  },
-  resolved: function BimapTransformation$resolved(x){
-    return new Resolve(this.context, call(this.$2, x));
-  }
-});
+export var bifunctor = {pred: isBifunctor, error: invalidArgumentOf('have Bifunctor implemented')};
 
 export function bimap(f){
   var context1 = application1(bimap, func, arguments);

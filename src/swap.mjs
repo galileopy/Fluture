@@ -1,7 +1,4 @@
-import {application1, future} from './internal/check';
-import {createTransformation} from './internal/transformation';
-import {Reject} from './reject';
-import {Resolve} from './resolve';
+import {createTransformation, Reject, Resolve, application1, future} from './future';
 
 export var SwapTransformation = createTransformation(0, 'swap', {
   resolved: function SwapTransformation$resolved(x){

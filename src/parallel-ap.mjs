@@ -1,14 +1,9 @@
-import {application1, application, future} from './internal/check';
-import {
-  createParallelTransformation,
-  earlyCrash,
-  earlyReject
-} from './internal/parallel-transformation';
+import {createParallelTransformation, earlyCrash, earlyReject} from './internal/parallel';
 import {noop} from './internal/utils';
 import {typeError} from './internal/error';
 import {isFunction} from './internal/predicates';
 import {show} from './internal/utils';
-import {MapTransformation} from './map';
+import {MapTransformation, application1, application, future} from './future';
 
 export var ParallelApTransformation =
 createParallelTransformation('parallelAp', earlyCrash, earlyReject, noop, {

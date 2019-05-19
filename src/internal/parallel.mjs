@@ -1,9 +1,5 @@
-import {createTransformation} from './transformation';
 import {noop} from './utils';
-import {Future} from '../future';
-import {crash} from '../crash';
-import {reject} from '../reject';
-import {resolve} from '../resolve';
+import {createTransformation, Future, crash, reject, resolve} from '../future';
 
 function Eager(future){
   var _this = this;

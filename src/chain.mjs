@@ -1,12 +1,9 @@
-import {application1, application, func, monad} from './internal/check';
 import {FL} from './internal/const';
-import {createTransformation} from './internal/transformation';
-import {call} from './internal/utils';
-import {isFuture} from './future';
+import {invalidArgumentOf} from './internal/error';
+import {isChain} from './internal/predicates';
+import {isFuture, application1, application, func, ChainTransformation} from './future';
 
-export var ChainTransformation = createTransformation(1, 'chain', {
-  resolved: function ChainTransformation$resolved(x){ return call(this.$1, x) }
-});
+export var monad = {pred: isChain, error: invalidArgumentOf('have Chain implemented')};
 
 export function chain(f){
   var context1 = application1(chain, func, arguments);

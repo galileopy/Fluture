@@ -1,7 +1,6 @@
-import {application1, func} from './internal/check';
 import {wrapException} from './internal/error';
 import {noop, call} from './internal/utils';
-import {createInterpreter} from './future';
+import {createInterpreter, application1, func} from './future';
 
 export var Node = createInterpreter(1, 'node', function Node$interpret(rec, rej, res){
   function Node$done(err, val){

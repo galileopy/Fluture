@@ -1,5 +1,5 @@
-import {application, application1, func, future} from './internal/check';
 import {raise} from './internal/utils';
+import {application, application1, func, future} from './future';
 
 export function fork(f){
   var context1 = application1(fork, func, arguments);

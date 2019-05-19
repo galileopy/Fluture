@@ -1,5 +1,4 @@
-import {application1, application, any, positiveInteger} from './internal/check';
-import {createInterpreter, never} from './future';
+import {createInterpreter, never, application1, application, any, positiveInteger} from './future';
 
 export var After = createInterpreter(2, 'after', function After$interpret(rec, rej, res){
   var id = setTimeout(res, this.$1, this.$2);

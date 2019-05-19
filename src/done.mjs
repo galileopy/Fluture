@@ -1,4 +1,4 @@
-import {application1, application, func, future} from './internal/check';
+import {application1, application, func, future} from './future';
 import {raise} from './internal/utils';
 
 export function done(callback){
