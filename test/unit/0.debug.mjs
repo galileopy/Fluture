@@ -1,12 +1,12 @@
-import {eq, error, assertStackTrace, K, I} from '../util/util';
+import {eq, error, assertStackTrace, K, I} from '../util/util.mjs';
 import {
   debugMode,
   debug,
   captureContext,
   captureApplicationContext,
   captureStackTraceFallback
-} from '../../src/internal/debug';
-import {nil} from '../../src/internal/list';
+} from '../../src/internal/debug.mjs';
+import {nil} from '../../src/internal/list.mjs';
 
 describe('debug', function (){
 

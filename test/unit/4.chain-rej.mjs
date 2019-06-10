@@ -1,7 +1,7 @@
 import {chainRej, resolve, reject} from '../../index.mjs';
-import {assertCrashed, assertRejected, assertResolved, assertValidFuture, bang, throwing, error, eq} from '../util/util';
-import {rejected, resolved, rejectedSlow} from '../util/futures';
-import {testFunction, functionArg, futureArg} from '../util/props';
+import {assertCrashed, assertRejected, assertResolved, assertValidFuture, bang, throwing, error, eq} from '../util/util.mjs';
+import {rejected, resolved, rejectedSlow} from '../util/futures.mjs';
+import {testFunction, functionArg, futureArg} from '../util/props.mjs';
 
 describe('chainRej()', function (){
 

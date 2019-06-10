@@ -1,7 +1,7 @@
-import {FL} from './internal/const';
-import {invalidArgumentOf} from './internal/error';
-import {isFunctor} from './internal/predicates';
-import {isFuture, MapTransformation, application1, application, func} from './future';
+import {FL} from './internal/const.mjs';
+import {invalidArgumentOf} from './internal/error.mjs';
+import {isFunctor} from './internal/predicates.mjs';
+import {isFuture, MapTransformation, application1, application, func} from './future.mjs';
 
 export var functor = {pred: isFunctor, error: invalidArgumentOf('have Functor implemented')};
 

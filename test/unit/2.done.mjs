@@ -1,7 +1,7 @@
 import {done} from '../../index.mjs';
-import {testFunction, functionArg, resolvedFutureArg} from '../util/props';
-import {eq, isFunction} from '../util/util';
-import {rejected, resolved} from '../util/futures';
+import {testFunction, functionArg, resolvedFutureArg} from '../util/props.mjs';
+import {eq, isFunction} from '../util/util.mjs';
+import {rejected, resolved} from '../util/futures.mjs';
 
 describe('done()', function (){
   testFunction('done', done, [functionArg, resolvedFutureArg], isFunction);

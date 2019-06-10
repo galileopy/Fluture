@@ -1,8 +1,8 @@
 /*eslint no-cond-assign:0, no-constant-condition:0 */
 import type from 'sanctuary-type-identifiers';
 
-import {FL, $$type} from './internal/const';
-import {captureContext, captureApplicationContext, captureStackTrace} from './internal/debug';
+import {FL, $$type} from './internal/const.mjs';
+import {captureContext, captureApplicationContext, captureStackTrace} from './internal/debug.mjs';
 import {
   invalidArgument,
   invalidArgumentOf,
@@ -12,11 +12,11 @@ import {
   typeError,
   withExtraContext,
   wrapException
-} from './internal/error';
-import {Next, Done} from './internal/iteration';
-import {nil, cons, isNil, reverse} from './internal/list';
-import {isFunction, isUnsigned} from './internal/predicates';
-import {show, noop, call, moop} from './internal/utils';
+} from './internal/error.mjs';
+import {Next, Done} from './internal/iteration.mjs';
+import {nil, cons, isNil, reverse} from './internal/list.mjs';
+import {isFunction, isUnsigned} from './internal/predicates.mjs';
+import {show, noop, call, moop} from './internal/utils.mjs';
 
 function alwaysTrue(){
   return true;

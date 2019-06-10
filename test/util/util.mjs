@@ -1,7 +1,7 @@
 import show from 'sanctuary-show';
 import type from 'sanctuary-type-identifiers';
 import {Future, isFuture, reject, resolve} from '../../index.mjs';
-import {crash} from '../../src/future';
+import {crash} from '../../src/future.mjs';
 import {strictEqual, deepStrictEqual} from 'assert';
 export * from '../../src/internal/predicates';
 

@@ -1,4 +1,4 @@
-import {createTransformation, Reject, Resolve, application1, future} from './future';
+import {createTransformation, Reject, Resolve, application1, future} from './future.mjs';
 
 export var SwapTransformation = createTransformation(0, 'swap', {
   resolved: function SwapTransformation$resolved(x){

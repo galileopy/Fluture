@@ -1,6 +1,6 @@
 import {Future, resolve, reject, after, rejectAfter, and} from '../../index.mjs';
-import {crash} from '../../src/future';
-import {error} from '../util/util';
+import {crash} from '../../src/future.mjs';
+import {error} from '../util/util.mjs';
 
 export var mock = Object.create(Future.prototype);
 mock._interpret = function (){ throw new Error('Override _interpret on mock Future') };

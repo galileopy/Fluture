@@ -1,4 +1,11 @@
-import {createInterpreter, never, application1, application, any, positiveInteger} from './future';
+import {
+  any,
+  application,
+  application1,
+  createInterpreter,
+  never,
+  positiveInteger
+} from './future.mjs';
 
 export var RejectAfter =
 createInterpreter(2, 'rejectAfter', function RejectAfter$interpret(rec, rej){

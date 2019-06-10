@@ -2,7 +2,7 @@ import FL from 'fantasy-laws';
 import Z from 'sanctuary-type-classes';
 import show from 'sanctuary-show';
 import {Future, bimap} from '../../index.mjs';
-import {assertEqual as eq, I, B, T, K, noop, STACKSIZE} from '../util/util';
+import {assertEqual as eq, I, B, T, K, noop, STACKSIZE} from '../util/util.mjs';
 import {
   FutureArb,
   _of,
@@ -15,7 +15,7 @@ import {
   nat,
   property,
   suchthat,
-} from '../util/props';
+} from '../util/props.mjs';
 
 var of = function (x){
   return Z.of(Future, x);

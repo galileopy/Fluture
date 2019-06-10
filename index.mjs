@@ -1,38 +1,46 @@
-export {Future as default, Future, reject, resolve, isFuture, never, isNever} from './src/future';
+export {
+  Future as default,
+  Future,
+  isFuture,
+  isNever,
+  never,
+  reject,
+  resolve
+} from './src/future.mjs';
 
-export {after} from './src/after';
-export {alt} from './src/alt';
-export {and} from './src/and';
-export {ap} from './src/ap';
-export {attemptP} from './src/attempt-p';
-export {attempt} from './src/attempt';
-export {bimap} from './src/bimap';
-export {both} from './src/both';
-export {cache} from './src/cache';
-export {chainRej} from './src/chain-rej';
-export {chain} from './src/chain';
-export {done} from './src/done';
-export {encaseP} from './src/encase-p';
-export {encase} from './src/encase';
-export {extractLeft} from './src/extract-left';
-export {extractRight} from './src/extract-right';
-export {fold} from './src/fold';
-export {forkCatch} from './src/fork-catch';
-export {fork} from './src/fork';
-export {go} from './src/go';
-export {hook} from './src/hook';
-export {lastly} from './src/lastly';
-export {mapRej} from './src/map-rej';
-export {map} from './src/map';
-export {node} from './src/node';
-export {parallelAp} from './src/parallel-ap';
-export {parallel} from './src/parallel';
-export {Par} from './src/par';
-export {promise} from './src/promise';
-export {race} from './src/race';
-export {rejectAfter} from './src/reject-after';
-export {seq} from './src/seq';
-export {swap} from './src/swap';
-export {value} from './src/value';
+export {after} from './src/after.mjs';
+export {alt} from './src/alt.mjs';
+export {and} from './src/and.mjs';
+export {ap} from './src/ap.mjs';
+export {attemptP} from './src/attempt-p.mjs';
+export {attempt} from './src/attempt.mjs';
+export {bimap} from './src/bimap.mjs';
+export {both} from './src/both.mjs';
+export {cache} from './src/cache.mjs';
+export {chainRej} from './src/chain-rej.mjs';
+export {chain} from './src/chain.mjs';
+export {done} from './src/done.mjs';
+export {encaseP} from './src/encase-p.mjs';
+export {encase} from './src/encase.mjs';
+export {extractLeft} from './src/extract-left.mjs';
+export {extractRight} from './src/extract-right.mjs';
+export {fold} from './src/fold.mjs';
+export {forkCatch} from './src/fork-catch.mjs';
+export {fork} from './src/fork.mjs';
+export {go} from './src/go.mjs';
+export {hook} from './src/hook.mjs';
+export {lastly} from './src/lastly.mjs';
+export {mapRej} from './src/map-rej.mjs';
+export {map} from './src/map.mjs';
+export {node} from './src/node.mjs';
+export {parallelAp} from './src/parallel-ap.mjs';
+export {parallel} from './src/parallel.mjs';
+export {Par} from './src/par.mjs';
+export {promise} from './src/promise.mjs';
+export {race} from './src/race.mjs';
+export {rejectAfter} from './src/reject-after.mjs';
+export {seq} from './src/seq.mjs';
+export {swap} from './src/swap.mjs';
+export {value} from './src/value.mjs';
 
-export {debugMode} from './src/internal/debug';
+export {debugMode} from './src/internal/debug.mjs';

@@ -1,7 +1,7 @@
 import {Future, both, node, done} from '../../index.mjs';
-import {assertCrashed, assertRejected, assertResolved, assertValidFuture, error, noop, eq} from '../util/util';
-import {crashed, rejected, resolved, crashedSlow, rejectedSlow, resolvedSlow} from '../util/futures';
-import {testFunction, futureArg} from '../util/props';
+import {assertCrashed, assertRejected, assertResolved, assertValidFuture, error, noop, eq} from '../util/util.mjs';
+import {crashed, rejected, resolved, crashedSlow, rejectedSlow, resolvedSlow} from '../util/futures.mjs';
+import {testFunction, futureArg} from '../util/props.mjs';
 
 describe('both()', function (){
 

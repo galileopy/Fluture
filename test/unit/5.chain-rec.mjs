@@ -1,8 +1,8 @@
 import chai from 'chai';
 import {resolve, after, reject} from '../../index.mjs';
-import {chainRec} from '../../src/future';
-import {isIteration} from '../../src/internal/iteration';
-import {assertCrashed, assertRejected, assertResolved, error, failRej, failRes, noop} from '../util/util';
+import {chainRec} from '../../src/future.mjs';
+import {isIteration} from '../../src/internal/iteration.mjs';
+import {assertCrashed, assertRejected, assertResolved, error, failRej, failRes, noop} from '../util/util.mjs';
 
 var expect = chai.expect;
 

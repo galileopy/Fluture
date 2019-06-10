@@ -1,5 +1,5 @@
 import {isFuture} from '../../index.mjs';
-import {property, anyFuture, anyNonFuture} from '../util/props';
+import {property, anyFuture, anyNonFuture} from '../util/props.mjs';
 
 describe('isFuture()', function (){
   property('returns true about Futures', anyFuture, function (value){

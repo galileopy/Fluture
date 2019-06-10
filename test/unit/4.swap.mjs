@@ -1,6 +1,6 @@
 import {swap, resolve, reject} from '../../index.mjs';
-import {assertRejected, assertResolved, assertValidFuture, eq} from '../util/util';
-import {testFunction, futureArg} from '../util/props';
+import {assertRejected, assertResolved, assertValidFuture, eq} from '../util/util.mjs';
+import {testFunction, futureArg} from '../util/props.mjs';
 
 describe('swap()', function (){
 

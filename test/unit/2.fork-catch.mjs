@@ -1,7 +1,7 @@
 import {forkCatch} from '../../index.mjs';
-import {testFunction, functionArg, futureArg} from '../util/props';
-import {eq, isFunction, error, noop} from '../util/util';
-import {crashed, rejected, resolved} from '../util/futures';
+import {testFunction, functionArg, futureArg} from '../util/props.mjs';
+import {eq, isFunction, error, noop} from '../util/util.mjs';
+import {crashed, rejected, resolved} from '../util/futures.mjs';
 
 describe('forkCatch()', function (){
   testFunction('forkCatch', forkCatch, [functionArg, functionArg, functionArg, futureArg], isFunction);

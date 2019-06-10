@@ -1,4 +1,4 @@
-import {application1, future} from './future';
+import {application1, future} from './future.mjs';
 
 export function extractLeft(m){
   application1(extractLeft, future, arguments);

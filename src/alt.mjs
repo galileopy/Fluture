@@ -1,13 +1,13 @@
-import {FL} from './internal/const';
-import {invalidArgumentOf} from './internal/error';
-import {isAlt} from './internal/predicates';
+import {FL} from './internal/const.mjs';
+import {invalidArgumentOf} from './internal/error.mjs';
+import {isAlt} from './internal/predicates.mjs';
 import {
   AltTransformation,
   application,
   application1,
   future,
   isFuture
-} from './future';
+} from './future.mjs';
 
 export var alternative = {pred: isAlt, error: invalidArgumentOf('have Alt implemented')};
 

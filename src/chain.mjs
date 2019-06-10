@@ -1,7 +1,7 @@
-import {FL} from './internal/const';
-import {invalidArgumentOf} from './internal/error';
-import {isChain} from './internal/predicates';
-import {isFuture, application1, application, func, ChainTransformation} from './future';
+import {FL} from './internal/const.mjs';
+import {invalidArgumentOf} from './internal/error.mjs';
+import {isChain} from './internal/predicates.mjs';
+import {isFuture, application1, application, func, ChainTransformation} from './future.mjs';
 
 export var monad = {pred: isChain, error: invalidArgumentOf('have Chain implemented')};
 

@@ -1,7 +1,7 @@
 import {fold} from '../../index.mjs';
-import {assertCrashed, assertResolved, assertValidFuture, bang, B, throwing, error, eq} from '../util/util';
-import {resolved, rejected} from '../util/futures';
-import {testFunction, functionArg, futureArg} from '../util/props';
+import {assertCrashed, assertResolved, assertValidFuture, bang, B, throwing, error, eq} from '../util/util.mjs';
+import {resolved, rejected} from '../util/futures.mjs';
+import {testFunction, functionArg, futureArg} from '../util/props.mjs';
 
 describe('fold()', function (){
 

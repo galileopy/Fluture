@@ -1,7 +1,7 @@
-import {wrapException, typeError} from './internal/error';
-import {isThenable} from './internal/predicates';
-import {noop, show} from './internal/utils';
-import {createInterpreter, application1, application, func, any} from './future';
+import {wrapException, typeError} from './internal/error.mjs';
+import {isThenable} from './internal/predicates.mjs';
+import {noop, show} from './internal/utils.mjs';
+import {createInterpreter, application1, application, func, any} from './future.mjs';
 
 function invalidPromise(p, f, a){
   return typeError(

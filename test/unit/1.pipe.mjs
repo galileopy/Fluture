@@ -1,5 +1,5 @@
-import {mock} from '../util/futures';
-import {eq, throws} from '../util/util';
+import {mock} from '../util/futures.mjs';
+import {eq, throws} from '../util/util.mjs';
 
 describe('Future#pipe()', function (){
 

@@ -1,6 +1,6 @@
-import {invalidArgumentOf} from './internal/error';
-import {application1} from './future';
-import {isParallel} from './par';
+import {invalidArgumentOf} from './internal/error.mjs';
+import {application1} from './future.mjs';
+import {isParallel} from './par.mjs';
 
 var parallel = {pred: isParallel, error: invalidArgumentOf('be a ConcurrentFuture')};
 

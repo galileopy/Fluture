@@ -1,5 +1,5 @@
 import chai from 'chai';
-import * as fn from '../../src/internal/utils';
+import * as fn from '../../src/internal/utils.mjs';
 
 var expect = chai.expect;
 

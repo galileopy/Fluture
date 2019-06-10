@@ -1,6 +1,6 @@
-import {reject} from '../../';
-import {eq, assertValidFuture, assertRejected} from '../util/util';
-import {testFunction, anyArg} from '../util/props';
+import {reject} from '../../index.mjs';
+import {eq, assertValidFuture, assertRejected} from '../util/util.mjs';
+import {testFunction, anyArg} from '../util/props.mjs';
 
 describe('reject()', function (){
 

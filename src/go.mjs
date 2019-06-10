@@ -1,11 +1,11 @@
 /*eslint consistent-return: 0 */
 
-import {typeError, invalidFuture, invalidArgument, wrapException} from './internal/error';
-import {isIteration} from './internal/iteration';
-import {isIterator} from './internal/predicates';
-import {Undetermined, Synchronous, Asynchronous} from './internal/timing';
-import {show, noop} from './internal/utils';
-import {createInterpreter, isFuture, application1, func} from './future';
+import {typeError, invalidFuture, invalidArgument, wrapException} from './internal/error.mjs';
+import {isIteration} from './internal/iteration.mjs';
+import {isIterator} from './internal/predicates.mjs';
+import {Undetermined, Synchronous, Asynchronous} from './internal/timing.mjs';
+import {show, noop} from './internal/utils.mjs';
+import {createInterpreter, isFuture, application1, func} from './future.mjs';
 
 export function invalidIteration(o){
   return typeError(

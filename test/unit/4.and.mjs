@@ -1,7 +1,7 @@
 import {Future, and} from '../../index.mjs';
-import {assertCrashed, eq, assertValidFuture, noop, assertResolved, assertRejected, error} from '../util/util';
-import {crashed, rejected, resolved, rejectedSlow, resolvedSlow} from '../util/futures';
-import {testFunction, futureArg} from '../util/props';
+import {assertCrashed, eq, assertValidFuture, noop, assertResolved, assertRejected, error} from '../util/util.mjs';
+import {crashed, rejected, resolved, rejectedSlow, resolvedSlow} from '../util/futures.mjs';
+import {testFunction, futureArg} from '../util/props.mjs';
 
 describe('and()', function (){
 

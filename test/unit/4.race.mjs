@@ -1,7 +1,7 @@
 import {Future, race} from '../../index.mjs';
-import {assertCrashed, assertRejected, assertResolved, assertValidFuture, error, noop, eq} from '../util/util';
-import {crashed, crashedSlow, rejected, rejectedSlow, resolved, resolvedSlow} from '../util/futures';
-import {testFunction, futureArg} from '../util/props';
+import {assertCrashed, assertRejected, assertResolved, assertValidFuture, error, noop, eq} from '../util/util.mjs';
+import {crashed, crashedSlow, rejected, rejectedSlow, resolved, resolvedSlow} from '../util/futures.mjs';
+import {testFunction, futureArg} from '../util/props.mjs';
 
 describe('race()', function (){
 

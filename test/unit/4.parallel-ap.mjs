@@ -1,7 +1,7 @@
 import {Future, resolve, reject, after} from '../../index.mjs';
-import {parallelAp} from '../../src/parallel-ap';
-import {assertCrashed, assertRejected, assertResolved, assertValidFuture, noop, add} from '../util/util';
-import {testFunction, futureArg} from '../util/props';
+import {parallelAp} from '../../src/parallel-ap.mjs';
+import {assertCrashed, assertRejected, assertResolved, assertValidFuture, noop, add} from '../util/util.mjs';
+import {testFunction, futureArg} from '../util/props.mjs';
 
 describe('parallelAp()', function (){
 

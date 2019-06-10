@@ -1,7 +1,7 @@
 import chai from 'chai';
 import {encase, map} from '../../index.mjs';
-import * as U from '../util/util';
-import {testFunction, functionArg, anyArg} from '../util/props';
+import * as U from '../util/util.mjs';
+import {testFunction, functionArg, anyArg} from '../util/props.mjs';
 
 var expect = chai.expect;
 

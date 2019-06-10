@@ -1,6 +1,6 @@
-import {noop, show, raise} from './internal/utils';
-import {invalidFuture, wrapException} from './internal/error';
-import {createInterpreter, isFuture, application1, application, func, future} from './future';
+import {noop, show, raise} from './internal/utils.mjs';
+import {invalidFuture, wrapException} from './internal/error.mjs';
+import {createInterpreter, isFuture, application1, application, func, future} from './future.mjs';
 
 function invalidDisposal(m, f, x){
   return invalidFuture(

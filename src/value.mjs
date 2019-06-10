@@ -1,6 +1,6 @@
-import {error} from './internal/error';
-import {raise, show} from './internal/utils';
-import {application1, application, func, future} from './future';
+import {error} from './internal/error.mjs';
+import {raise, show} from './internal/utils.mjs';
+import {application1, application, func, future} from './future.mjs';
 
 export function value(res){
   var context1 = application1(value, func, arguments);

@@ -1,6 +1,6 @@
 import {after, never} from '../../index.mjs';
-import {eq, assertValidFuture, assertResolved, failRej, failRes} from '../util/util';
-import {testFunction, positiveIntegerArg, anyArg} from '../util/props';
+import {eq, assertValidFuture, assertResolved, failRej, failRes} from '../util/util.mjs';
+import {testFunction, positiveIntegerArg, anyArg} from '../util/props.mjs';
 
 describe('after()', function (){
 

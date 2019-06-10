@@ -1,5 +1,5 @@
-import {call} from './internal/utils';
-import {createTransformation, Resolve, application1, application, func, future} from './future';
+import {call} from './internal/utils.mjs';
+import {createTransformation, Resolve, application1, application, func, future} from './future.mjs';
 
 export var FoldTransformation = createTransformation(2, 'fold', {
   rejected: function FoldTransformation$rejected(x){

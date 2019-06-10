@@ -1,6 +1,6 @@
-import {resolve} from '../../';
-import {eq, assertValidFuture, assertResolved} from '../util/util';
-import {testFunction, anyArg} from '../util/props';
+import {resolve} from '../../index.mjs';
+import {eq, assertValidFuture, assertResolved} from '../util/util.mjs';
+import {testFunction, anyArg} from '../util/props.mjs';
 
 describe('resolve()', function (){
 

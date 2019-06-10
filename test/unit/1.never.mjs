@@ -1,5 +1,5 @@
 import {never} from '../../index.mjs';
-import {assertValidFuture, noop, eq} from '../util/util';
+import {assertValidFuture, noop, eq} from '../util/util.mjs';
 
 describe('never', function (){
 

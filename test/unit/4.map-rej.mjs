@@ -1,7 +1,7 @@
 import {mapRej} from '../../index.mjs';
-import {assertCrashed, assertRejected, assertResolved, assertValidFuture, bang, failRej, failRes, throwing, error, eq} from '../util/util';
-import {rejected, resolved, resolvedSlow, rejectedSlow} from '../util/futures';
-import {testFunction, functionArg, futureArg} from '../util/props';
+import {assertCrashed, assertRejected, assertResolved, assertValidFuture, bang, failRej, failRes, throwing, error, eq} from '../util/util.mjs';
+import {rejected, resolved, resolvedSlow, rejectedSlow} from '../util/futures.mjs';
+import {testFunction, functionArg, futureArg} from '../util/props.mjs';
 
 describe('mapRej()', function (){
 

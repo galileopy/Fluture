@@ -1,8 +1,8 @@
-import {show} from './utils';
-import {ordinal, namespace, name, version} from './const';
+import {show} from './utils.mjs';
+import {ordinal, namespace, name, version} from './const.mjs';
 import type from 'sanctuary-type-identifiers';
-import {nil, cat} from './list';
-import {captureStackTrace} from './debug';
+import {nil, cat} from './list.mjs';
+import {captureStackTrace} from './debug.mjs';
 
 function showArg(x){
   return show(x) + ' :: ' + type.parse(type(x)).name;

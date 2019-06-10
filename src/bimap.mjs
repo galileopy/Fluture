@@ -1,7 +1,7 @@
-import {FL} from './internal/const';
-import {invalidArgumentOf} from './internal/error';
-import {isBifunctor} from './internal/predicates';
-import {isFuture, BimapTransformation, application1, application, func} from './future';
+import {FL} from './internal/const.mjs';
+import {invalidArgumentOf} from './internal/error.mjs';
+import {isBifunctor} from './internal/predicates.mjs';
+import {isFuture, BimapTransformation, application1, application, func} from './future.mjs';
 
 export var bifunctor = {pred: isBifunctor, error: invalidArgumentOf('have Bifunctor implemented')};
 

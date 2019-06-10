@@ -1,7 +1,7 @@
 import {promise} from '../../index.mjs';
-import {testFunction, futureArg} from '../util/props';
-import {noop, isThenable, eq, error} from '../util/util';
-import {crashed, rejected, resolved} from '../util/futures';
+import {testFunction, futureArg} from '../util/props.mjs';
+import {noop, isThenable, eq, error} from '../util/util.mjs';
+import {crashed, rejected, resolved} from '../util/futures.mjs';
 
 describe('promise()', function (){
 

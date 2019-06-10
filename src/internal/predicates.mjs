@@ -1,4 +1,4 @@
-import {FL} from './const';
+import {FL} from './const.mjs';
 
 export function isFunction(f){
   return typeof f === 'function';

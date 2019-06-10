@@ -1,7 +1,7 @@
 import {lastly, resolve, reject, map} from '../../index.mjs';
-import {assertRejected, assertResolved, assertValidFuture, failRej, failRes, noop, eq} from '../util/util';
-import {rejected, rejectedSlow, resolved, resolvedSlow} from '../util/futures';
-import {testFunction, futureArg} from '../util/props';
+import {assertRejected, assertResolved, assertValidFuture, failRej, failRes, noop, eq} from '../util/util.mjs';
+import {rejected, rejectedSlow, resolved, resolvedSlow} from '../util/futures.mjs';
+import {testFunction, futureArg} from '../util/props.mjs';
 
 describe('lastly()', function (){
 

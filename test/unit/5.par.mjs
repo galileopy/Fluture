@@ -1,8 +1,8 @@
 import chai from 'chai';
 import Z from 'sanctuary-type-classes';
 import {Future, Par, seq, resolve, reject, never, ap, map, alt, and} from '../../index.mjs';
-import {add, assertCrashed, assertRejected, assertResolved, bang, error, noop, throws} from '../util/util';
-import {rejected, resolved, resolvedSlow} from '../util/futures';
+import {add, assertCrashed, assertRejected, assertResolved, bang, error, noop, throws} from '../util/util.mjs';
+import {rejected, resolved, resolvedSlow} from '../util/futures.mjs';
 
 var expect = chai.expect;
 

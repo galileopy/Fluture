@@ -1,5 +1,12 @@
-import {AndTransformation} from './and';
-import {createTransformation, Resolve, Reject, application1, application, future} from './future';
+import {AndTransformation} from './and.mjs';
+import {
+  application,
+  application1,
+  createTransformation,
+  future,
+  Reject,
+  Resolve
+} from './future.mjs';
 
 export var LastlyTransformation = createTransformation(1, 'lastly', {
   rejected: function LastlyAction$rejected(x){

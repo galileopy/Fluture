@@ -1,9 +1,9 @@
-import {createParallelTransformation, earlyCrash, earlyReject} from './internal/parallel';
-import {noop} from './internal/utils';
-import {typeError} from './internal/error';
-import {isFunction} from './internal/predicates';
-import {show} from './internal/utils';
-import {MapTransformation, application1, application, future} from './future';
+import {createParallelTransformation, earlyCrash, earlyReject} from './internal/parallel.mjs';
+import {noop} from './internal/utils.mjs';
+import {typeError} from './internal/error.mjs';
+import {isFunction} from './internal/predicates.mjs';
+import {show} from './internal/utils.mjs';
+import {MapTransformation, application1, application, future} from './future.mjs';
 
 export var ParallelApTransformation =
 createParallelTransformation('parallelAp', earlyCrash, earlyReject, noop, {

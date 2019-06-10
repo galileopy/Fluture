@@ -1,5 +1,5 @@
-import {noop} from './utils';
-import {createTransformation, Future, crash, reject, resolve} from '../future';
+import {noop} from './utils.mjs';
+import {createTransformation, Future, crash, reject, resolve} from '../future.mjs';
 
 function Eager(future){
   var _this = this;

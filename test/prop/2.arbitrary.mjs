@@ -1,4 +1,4 @@
-import {assertEqual, I, B, K} from '../util/util';
+import {assertEqual, I, B, K} from '../util/util.mjs';
 import {
   any,
   anyFuture,
@@ -9,7 +9,7 @@ import {
   g,
   oneof,
   property,
-} from '../util/props';
+} from '../util/props.mjs';
 import {
   after,
   and,
@@ -24,7 +24,7 @@ import {
   rejectAfter,
   resolve,
   swap,
-} from '../../';
+} from '../../index.mjs';
 
 var make = oneof(constant(resolve), constant(reject));
 

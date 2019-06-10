@@ -1,5 +1,5 @@
-import {eq} from '../util/util';
-import {nil, cons, reverse, cat} from '../../src/internal/list';
+import {eq} from '../util/util.mjs';
+import {nil, cons, reverse, cat} from '../../src/internal/list.mjs';
 
 describe('list', function (){
 

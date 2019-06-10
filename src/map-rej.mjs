@@ -1,5 +1,5 @@
-import {call} from './internal/utils';
-import {createTransformation, Reject, application1, application, future, func} from './future';
+import {call} from './internal/utils.mjs';
+import {createTransformation, Reject, application1, application, future, func} from './future.mjs';
 
 export var MapRejTransformation = createTransformation(1, 'mapRej', {
   rejected: function MapRejTransformation$rejected(x){

@@ -1,5 +1,5 @@
-import {raise} from './internal/utils';
-import {application, application1, func, future} from './future';
+import {raise} from './internal/utils.mjs';
+import {application, application1, func, future} from './future.mjs';
 
 export function fork(f){
   var context1 = application1(fork, func, arguments);

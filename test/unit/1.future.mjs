@@ -1,6 +1,6 @@
 import Future from '../../index.mjs';
-import {noop, eq, assertCrashed, assertResolved, error, throwit, failRej, failRes, assertValidFuture} from '../util/util';
-import {testFunction, functionArg} from '../util/props';
+import {noop, eq, assertCrashed, assertResolved, error, throwit, failRej, failRes, assertValidFuture} from '../util/util.mjs';
+import {testFunction, functionArg} from '../util/props.mjs';
 
 describe('Future()', function (){
   testFunction('Future', Future, [functionArg], assertValidFuture);

@@ -1,4 +1,4 @@
-import {application1, future} from './future';
+import {application1, future} from './future.mjs';
 
 export function promise(m){
   application1(promise, future, arguments);

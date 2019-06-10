@@ -1,5 +1,5 @@
 import chai from 'chai';
-import {Next, Done, isIteration} from '../../src/internal/iteration';
+import {Next, Done, isIteration} from '../../src/internal/iteration.mjs';
 
 var expect = chai.expect;
 

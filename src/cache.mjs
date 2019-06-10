@@ -1,5 +1,5 @@
-import {noop} from './internal/utils';
-import {createInterpreter, application1, future} from './future';
+import {noop} from './internal/utils.mjs';
+import {createInterpreter, application1, future} from './future.mjs';
 
 export var Cold = 0;
 export var Pending = 1;

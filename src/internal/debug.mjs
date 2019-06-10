@@ -1,5 +1,5 @@
-import {ordinal} from './const';
-import {cons} from './list';
+import {ordinal} from './const.mjs';
+import {cons} from './list.mjs';
 
 /* istanbul ignore next: non v8 compatibility */
 var captureStackTrace = Error.captureStackTrace || captureStackTraceFallback;

@@ -1,6 +1,6 @@
-import {crash} from '../../src/future';
-import {eq, assertIsFuture, assertCrashed} from '../util/util';
-import {testFunction, anyArg} from '../util/props';
+import {crash} from '../../src/future.mjs';
+import {eq, assertIsFuture, assertCrashed} from '../util/util.mjs';
+import {testFunction, anyArg} from '../util/props.mjs';
 
 describe('crash()', function (){
 

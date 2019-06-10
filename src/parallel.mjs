@@ -1,6 +1,6 @@
-import {wrapException, invalidArgumentOf} from './internal/error';
-import {isArray} from './internal/predicates';
-import {noop} from './internal/utils';
+import {wrapException, invalidArgumentOf} from './internal/error.mjs';
+import {isArray} from './internal/predicates.mjs';
+import {noop} from './internal/utils.mjs';
 import {
   createInterpreter,
   isFuture,
@@ -8,7 +8,7 @@ import {
   application1,
   positiveInteger,
   application
-} from './future';
+} from './future.mjs';
 
 function isFutureArray(xs){
   if(!isArray(xs)) return false;

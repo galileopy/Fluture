@@ -1,4 +1,4 @@
-import {createTransformation, application1, application, future} from './future';
+import {createTransformation, application1, application, future} from './future.mjs';
 
 export var AndTransformation = createTransformation(1, 'and', {
   resolved: function AndTransformation$resolved(){ return this.$1 }

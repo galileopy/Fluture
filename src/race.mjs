@@ -3,8 +3,8 @@ import {
   earlyCrash,
   earlyReject,
   earlyResolve
-} from './internal/parallel';
-import {application1, application, future} from './future';
+} from './internal/parallel.mjs';
+import {application1, application, future} from './future.mjs';
 
 export var RaceTransformation =
 createParallelTransformation('race', earlyCrash, earlyReject, earlyResolve, {});

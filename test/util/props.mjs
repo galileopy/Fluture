@@ -2,9 +2,9 @@ import type from 'sanctuary-type-identifiers';
 import show from 'sanctuary-show';
 import jsc from 'jsverify';
 
-import {Future, resolve, reject, Par, seq} from '../../';
-import {eq, error, throws} from '../util/util';
-import {ordinal} from '../../src/internal/const';
+import {Future, resolve, reject, Par, seq} from '../../index.mjs';
+import {eq, error, throws} from '../util/util.mjs';
+import {ordinal} from '../../src/internal/const.mjs';
 
 export var array = jsc.array;
 export var nearray = jsc.nearray;

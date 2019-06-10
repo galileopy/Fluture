@@ -1,8 +1,8 @@
 import Either from 'sanctuary-either';
 import {bimap} from '../../index.mjs';
-import {assertCrashed, assertRejected, assertResolved, assertValidFuture, I, bang, eq, throwing, error} from '../util/util';
-import {testFunction, functionArg, bifunctorArg} from '../util/props';
-import {resolved, rejected} from '../util/futures';
+import {assertCrashed, assertRejected, assertResolved, assertValidFuture, I, bang, eq, throwing, error} from '../util/util.mjs';
+import {testFunction, functionArg, bifunctorArg} from '../util/props.mjs';
+import {resolved, rejected} from '../util/futures.mjs';
 
 describe('bimap()', function (){
 

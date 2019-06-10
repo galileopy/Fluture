@@ -1,7 +1,7 @@
 import chai from 'chai';
-import * as U from '../util/util';
+import * as U from '../util/util.mjs';
 import Future from '../../index.mjs';
-import * as util from '../../src/internal/predicates';
+import * as util from '../../src/internal/predicates.mjs';
 
 var expect = chai.expect;
 

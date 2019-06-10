@@ -1,6 +1,6 @@
 import {Future, resolve, after, chain, race, map} from '../../index.mjs';
-import {noop, error, assertResolved, eq} from '../util/util';
-import {resolved, resolvedSlow} from '../util/futures';
+import {noop, error, assertResolved, eq} from '../util/util.mjs';
+import {resolved, resolvedSlow} from '../util/futures.mjs';
 
 function through (x, fs){
   return fs.reduce(function (y, f){

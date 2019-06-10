@@ -1,8 +1,8 @@
 import Either from 'sanctuary-either';
 import {chain, resolve, reject} from '../../index.mjs';
-import {assertCrashed, assertRejected, assertResolved, assertValidFuture, bang, eq, throwing, error} from '../util/util';
-import {rejected, resolved, resolvedSlow} from '../util/futures';
-import {testFunction, functionArg, chainArg} from '../util/props';
+import {assertCrashed, assertRejected, assertResolved, assertValidFuture, bang, eq, throwing, error} from '../util/util.mjs';
+import {rejected, resolved, resolvedSlow} from '../util/futures.mjs';
+import {testFunction, functionArg, chainArg} from '../util/props.mjs';
 
 describe('chain()', function (){
 

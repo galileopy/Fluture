@@ -1,7 +1,7 @@
-import {FL} from './internal/const';
-import {invalidArgumentOf} from './internal/error';
-import {isApply} from './internal/predicates';
-import {isFuture, ApTransformation, application1, application, future} from './future';
+import {FL} from './internal/const.mjs';
+import {invalidArgumentOf} from './internal/error.mjs';
+import {isApply} from './internal/predicates.mjs';
+import {isFuture, ApTransformation, application1, application, future} from './future.mjs';
 
 export var apply = {pred: isApply, error: invalidArgumentOf('have Apply implemented')};
 

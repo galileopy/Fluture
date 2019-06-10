@@ -1,6 +1,6 @@
 import {isNever, never} from '../../index.mjs';
-import {any, property} from '../util/props';
-import {eq} from '../util/util';
+import {any, property} from '../util/props.mjs';
+import {eq} from '../util/util.mjs';
 
 describe('isNever()', function (){
   it('returns true about never', function (){

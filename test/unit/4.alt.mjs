@@ -1,8 +1,8 @@
 import Either from 'sanctuary-either';
 import {Future, alt} from '../../index.mjs';
-import {assertCrashed, eq, assertValidFuture, noop, assertResolved, assertRejected, error} from '../util/util';
-import {crashed, rejected, resolved, rejectedSlow, resolvedSlow} from '../util/futures';
-import {testFunction, altArg, futureArg} from '../util/props';
+import {assertCrashed, eq, assertValidFuture, noop, assertResolved, assertRejected, error} from '../util/util.mjs';
+import {crashed, rejected, resolved, rejectedSlow, resolvedSlow} from '../util/futures.mjs';
+import {testFunction, altArg, futureArg} from '../util/props.mjs';
 
 describe('alt()', function (){
 

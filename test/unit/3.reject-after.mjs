@@ -1,6 +1,6 @@
 import {rejectAfter, never} from '../../index.mjs';
-import {eq, assertValidFuture, assertRejected, failRej, failRes} from '../util/util';
-import {testFunction, positiveIntegerArg, anyArg} from '../util/props';
+import {eq, assertValidFuture, assertRejected, failRej, failRes} from '../util/util.mjs';
+import {testFunction, positiveIntegerArg, anyArg} from '../util/props.mjs';
 
 describe('rejectAfter()', function (){
 

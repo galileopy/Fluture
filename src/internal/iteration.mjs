@@ -1,4 +1,4 @@
-import {isObject, isBoolean} from './predicates';
+import {isObject, isBoolean} from './predicates.mjs';
 
 export function Next(x){
   return {done: false, value: x};

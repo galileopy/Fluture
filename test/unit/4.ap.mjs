@@ -1,7 +1,7 @@
 import Either from 'sanctuary-either';
 import {Future, ap, resolve, reject, after} from '../../index.mjs';
-import {assertCrashed, assertRejected, assertResolved, assertValidFuture, noop, add, eq, bang} from '../util/util';
-import {testFunction, applyArg, futureArg} from '../util/props';
+import {assertCrashed, assertRejected, assertResolved, assertValidFuture, noop, add, eq, bang} from '../util/util.mjs';
+import {testFunction, applyArg, futureArg} from '../util/props.mjs';
 
 describe('ap()', function (){
 

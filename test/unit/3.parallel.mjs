@@ -1,8 +1,8 @@
 import chai from 'chai';
 import {Future, parallel, resolve, reject, after} from '../../index.mjs';
-import * as U from '../util/util';
-import * as F from '../util/futures';
-import {testFunction, positiveIntegerArg, futureArrayArg} from '../util/props';
+import * as U from '../util/util.mjs';
+import * as F from '../util/futures.mjs';
+import {testFunction, positiveIntegerArg, futureArrayArg} from '../util/props.mjs';
 
 var expect = chai.expect;
 

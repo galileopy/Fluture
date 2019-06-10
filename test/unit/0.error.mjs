@@ -1,7 +1,7 @@
-import {eq, assertStackTrace, error as mockError, noop} from '../util/util';
-import {mock} from '../util/futures';
-import {namespace, name, version} from '../../src/internal/const';
-import {nil, cons, cat} from '../../src/internal/list';
+import {eq, assertStackTrace, error as mockError, noop} from '../util/util.mjs';
+import {mock} from '../util/futures.mjs';
+import {namespace, name, version} from '../../src/internal/const.mjs';
+import {nil, cons, cat} from '../../src/internal/list.mjs';
 import {
   error,
   typeError,
@@ -11,7 +11,7 @@ import {
   invalidFutureArgument,
   wrapException,
   contextToStackTrace
-} from '../../src/internal/error';
+} from '../../src/internal/error.mjs';
 
 function args (){
   return arguments;

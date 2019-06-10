@@ -1,8 +1,8 @@
 import Either from 'sanctuary-either';
 import {map} from '../../index.mjs';
-import {assertCrashed, assertRejected, assertResolved, assertValidFuture, bang, failRej, failRes, eq, throwing, error} from '../util/util';
-import {rejected, resolved, resolvedSlow, rejectedSlow} from '../util/futures';
-import {testFunction, functionArg, functorArg} from '../util/props';
+import {assertCrashed, assertRejected, assertResolved, assertValidFuture, bang, failRej, failRes, eq, throwing, error} from '../util/util.mjs';
+import {rejected, resolved, resolvedSlow, rejectedSlow} from '../util/futures.mjs';
+import {testFunction, functionArg, functorArg} from '../util/props.mjs';
 
 describe('map()', function (){
 

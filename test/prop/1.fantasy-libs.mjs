@@ -1,9 +1,9 @@
 import * as R from 'ramda';
 import Z from 'sanctuary-type-classes';
-import {Future, ap, alt, map, bimap, chain, resolve, reject} from '../../';
+import {Future, ap, alt, map, bimap, chain, resolve, reject} from '../../index.mjs';
 
-import {assertEqual} from '../util/util';
-import {any, property, FutureArb, string, number, constant, anyFuture, oneof} from '../util/props';
+import {assertEqual} from '../util/util.mjs';
+import {any, property, FutureArb, string, number, constant, anyFuture, oneof} from '../util/props.mjs';
 
 function bang (x){
   return x + '!';

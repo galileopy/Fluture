@@ -1,9 +1,9 @@
 import concurrify from 'concurrify';
 import type from 'sanctuary-type-identifiers';
 
-import {Future, never} from './future';
-import {parallelAp} from './parallel-ap';
-import {race} from './race';
+import {Future, never} from './future.mjs';
+import {parallelAp} from './parallel-ap.mjs';
+import {race} from './race.mjs';
 
 function uncurry(f){
   return function(a, b){

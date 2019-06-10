@@ -1,6 +1,6 @@
 import show from 'sanctuary-show';
-import {assertEqual, I, B, T, K} from '../util/util';
-import {FutureArb, any as _x, anyFuture as _mx, f, g, property, _of, elements} from '../util/props';
+import {assertEqual, I, B, T, K} from '../util/util.mjs';
+import {FutureArb, any as _x, anyFuture as _mx, f, g, property, _of, elements} from '../util/props.mjs';
 import {
   alt,
   and,
@@ -16,7 +16,7 @@ import {
   reject,
   resolve,
   swap,
-} from '../../';
+} from '../../index.mjs';
 
 var _f = elements([f, g, I, resolve]);
 var _mf = _of(_f);

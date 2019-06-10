@@ -1,5 +1,5 @@
-import {application1, application, func, future} from './future';
-import {raise} from './internal/utils';
+import {application1, application, func, future} from './future.mjs';
+import {raise} from './internal/utils.mjs';
 
 export function done(callback){
   var context1 = application1(done, func, arguments);

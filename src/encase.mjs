@@ -1,5 +1,5 @@
-import {noop} from './internal/utils';
-import {createInterpreter, application1, application, func, any} from './future';
+import {noop} from './internal/utils.mjs';
+import {createInterpreter, application1, application, func, any} from './future.mjs';
 
 export var Encase = createInterpreter(2, 'encase', function Encase$interpret(rec, rej, res){
   var fn = this.$1, r;

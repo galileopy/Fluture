@@ -1,8 +1,8 @@
 import show from 'sanctuary-show';
 import {value} from '../../index.mjs';
-import {testFunction, functionArg, resolvedFutureArg} from '../util/props';
-import {eq, isFunction, noop, itRaises, error} from '../util/util';
-import {crashed, rejected, resolved} from '../util/futures';
+import {testFunction, functionArg, resolvedFutureArg} from '../util/props.mjs';
+import {eq, isFunction, noop, itRaises, error} from '../util/util.mjs';
+import {crashed, rejected, resolved} from '../util/futures.mjs';
 
 describe('value()', function (){
   testFunction('value', value, [functionArg, resolvedFutureArg], isFunction);

@@ -1,9 +1,9 @@
 import chai from 'chai';
 import {Future, cache, resolve, reject, after} from '../../index.mjs';
-import {Crashed, Rejected, Resolved} from '../../src/cache';
-import * as U from '../util/util';
-import * as F from '../util/futures';
-import {testFunction, futureArg} from '../util/props';
+import {Crashed, Rejected, Resolved} from '../../src/cache.mjs';
+import * as U from '../util/util.mjs';
+import * as F from '../util/futures.mjs';
+import {testFunction, futureArg} from '../util/props.mjs';
 
 var expect = chai.expect;
 

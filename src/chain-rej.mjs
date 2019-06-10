@@ -1,5 +1,5 @@
-import {call} from './internal/utils';
-import {createTransformation, application1, application, future, func} from './future';
+import {call} from './internal/utils.mjs';
+import {createTransformation, application1, application, future, func} from './future.mjs';
 
 export var ChainRejTransformation = createTransformation(1, 'chainRej', {
   rejected: function ChainRejTransformation$rejected(x){ return call(this.$1, x) }
