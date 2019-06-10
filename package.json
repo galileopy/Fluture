@@ -20,7 +20,7 @@
     "lint": "eslint --ext mjs src test index.mjs index.cjs.mjs",
     "lint:readme": "remark --no-stdout --frail -u remark-validate-links README.md",
     "release": "xyz --edit --repo git@github.com:fluture-js/Fluture.git --tag 'X.Y.Z' --script scripts/distribute --increment",
-    "test": "npm run lint && npm run lint:readme && npm run test:unit && npm run test:prop && npm run test:integration && npm run test:types && npm run test:build",
+    "test": "npm run lint && npm run lint:readme && ./scripts/test-esm && npm run test:unit && npm run test:prop && npm run test:integration && npm run test:types && npm run test:build",
     "test:integration": "npm run clean && mocha --require esm --ui bdd --reporter list --full-trace --check-leaks --bail test/integration.js",
     "test:unit": "npm run clean && mocha --require esm --ui bdd --reporter list --full-trace --check-leaks --bail test/unit.js",
     "test:prop": "npm run clean && mocha --require esm --ui bdd --reporter list --full-trace --bail test/prop.js",
